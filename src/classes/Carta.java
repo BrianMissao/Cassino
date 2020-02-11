@@ -3,22 +3,31 @@ package classes;
 public class Carta {
     private String valorString;
     private int valorInt;
+
     public Carta(int valor) {
-        valorInt = valor;
-        if (valor == 11 ) {
+        this.valorInt = valor == 0 ? 1 : valor;
+        definirStringValor();
+    }
+
+    private void definirStringValor() {
+        if (getValorInt() == 1 ) {
+            this.valorString = "As";
+        }
+        else if (getValorInt() == 11) {
             this.valorString = "Valete";
-        }
-        else if (valor == 12) {
+        } else if (getValorInt() == 12) {
             this.valorString = "Dama";
-        }
-        else {
-            this.valorString = String.valueOf(valor);
+        } else if (getValorInt() == 13) {
+            this.valorString = "rei";
+        } else {
+            this.valorString = String.valueOf(getValorInt());
         }
     }
 
     public String getValorString() {
         return valorString;
     }
+
     public int getValorInt() {
         return valorInt;
     }

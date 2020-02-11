@@ -6,12 +6,14 @@ public class Jogador {
 
     public Jogador(String nome) {
         this.nome = nome;
+        this.money = 30000.00;
     }
 
     public void ganhar(double money) {
         this.money += money;
     }
-    public void perder (double money) {
+
+    public void perder(double money) {
         this.money -= money;
     }
 
@@ -21,5 +23,13 @@ public class Jogador {
 
     public double getMoney() {
         return money;
+    }
+
+    public void ganharJogo() {
+        System.out.println("Parabéns, você ganhou o jogo!");
+    }
+
+    public void perderJogo() {
+        System.out.println("Você perdeu o jogo.");
     }
 }
