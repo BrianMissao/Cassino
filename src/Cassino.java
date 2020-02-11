@@ -8,6 +8,7 @@ public class Cassino {
         Scanner teclado = new Scanner(System.in);
         System.out.println("Bem-vindo ao cassino da fortuna!\nOlá, com quem tenho o prazer de jogar?");
         String nomeJogador = teclado.nextLine();
+        System.out.println("Muito bem "+nomeJogador+", vou levá-lo a mesa do jogo de alto ou baixo.");
         Jogador jogador = new Jogador(nomeJogador);
         Mesa mesa = new Mesa(jogador);
         mesa.turno();

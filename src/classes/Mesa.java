@@ -9,11 +9,12 @@ public class Mesa {
     private Carta proximaSorteada;
     private int turno;
     private double aposta;
-    private Scanner teclado = new Scanner(System.in);
+    private Scanner teclado;
 
     public Mesa(Jogador jogador) {
         this.jogador = jogador;
         this.turno = 1;
+        this.teclado = new Scanner(System.in);
     }
 
     public void turno() {
@@ -21,12 +22,14 @@ public class Mesa {
         sortearProximaCarta();
 
         while (jogador.getMoney() > 0 && jogador.getMoney() < 1000000.00) {
-            System.out.println("Rodada "+turno+"\nVocê tirou "+getSorteada().getValorString()+".");
-            System.out.println("A próxima carta será mais alta ou baixa?");
+            System.out.println("Rodada "+turno+"\nVocê tirou "+getSorteada().getValorString()+".\nA próxima carta será mais alta ou baixa?");
             switch (teclado.nextLine()) {
                 case "s":
                     mostrarValorDeJogadorNaMesa();
                     continue;
+                case "Abandonar":
+                    sair();
+                    break;
                 case "":
                     continue;
                 case "a":
@@ -50,6 +53,12 @@ public class Mesa {
             jogador.perderJogo();
         }
     }
+
+    private void sair() {
+        System.out.println("Ok.\nSaindo...");
+        System.exit(0);
+    }
+
     private void usuarioAchaQueACartaEhBaixa() throws RuntimeException, NumberFormatException {
         while (true) {
             System.out.println("Quanto dinheiro você aposta?\nNo máximo " + jogador.getMoney() + ".");

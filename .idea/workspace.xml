@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f427df2-f9a4-4bca-9bfa-5230ccb42885" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cassino/classes/Carta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cassino/classes/Carta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cassino/classes/Jogador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cassino/classes/Jogador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cassino/classes/Mesa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cassino/classes/Mesa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Carta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Carta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Jogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Jogador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/Cassino.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cassino/Cassino.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cassino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cassino.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/Mesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Mesa.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +61,7 @@
       <workItem from="1581022364841" duration="2084000" />
       <workItem from="1581078087683" duration="6172000" />
       <workItem from="1581337196634" duration="13797000" />
-      <workItem from="1581423523815" duration="6821000" />
+      <workItem from="1581423523815" duration="8487000" />
     </task>
     <servers />
   </component>
