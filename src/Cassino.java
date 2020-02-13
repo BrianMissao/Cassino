@@ -1,4 +1,5 @@
 import classes.Jogador;
+import classes.Jogo;
 import classes.Mesa;
 
 import java.util.Scanner;
@@ -10,7 +11,8 @@ public class Cassino {
         String nomeJogador = teclado.nextLine();
         System.out.println("Muito bem "+nomeJogador+", vou levá-lo a mesa do jogo de alto ou baixo.");
         Jogador jogador = new Jogador(nomeJogador);
-        Mesa mesa = new Mesa(jogador);
-        mesa.turno();
+        Jogo jogo = new Jogo(jogador);
+        Mesa mesa = new Mesa(jogo);
+        mesa.iniciarPartida();
     }
 }
