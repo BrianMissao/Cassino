@@ -4,54 +4,62 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Mesa {
-    private Jogador jogador;
-    private Carta sorteada;
-    private Carta proximaSorteada;
-    private int turno;
+    private Jogo jogo;
     private double aposta;
     private Scanner teclado;
+    private String altoOuBaixo;
 
-    public Mesa(Jogador jogador) {
-        this.jogador = jogador;
-        this.turno = 1;
+    public Mesa(Jogo jogo) {
+        this.jogo = jogo;
         this.teclado = new Scanner(System.in);
     }
 
-    public void turno() {
-        sortearCarta();
-        sortearProximaCarta();
+    public void iniciarPartida() {
+        jogo.sortearCarta();
+        jogo.sortearProximaCarta();
+        while (jogo.getMoneyJogador() > 0 && jogo.getMoneyJogador() < 1000000.00) {
+            trataRespostasDigitadasPeloUsuario();
+            jogo.sortearCarta();
+            jogo.sortearProximaCarta();
+            jogo.atualizaTurno();
+        }
+        jogo.definirResultadoJogo();
+    }
 
-        while (jogador.getMoney() > 0 && jogador.getMoney() < 1000000.00) {
-            System.out.println("Rodada "+turno+"\nVocê tirou "+getSorteada().getValorString()+".\nA próxima carta será mais alta ou baixa?");
-            switch (teclado.nextLine()) {
-                case "s":
-                    mostrarValorDeJogadorNaMesa();
-                    continue;
-                case "Abandonar":
-                    sair();
-                    break;
-                case "":
-                    continue;
-                case "a":
-                    usuarioAchaQueACartaEhAlta();
+    private void trataRespostasDigitadasPeloUsuario() {
+        while (true) {
+            System.out.println("Rodada " + jogo.getTurno() + "\nVocê tirou " + jogo.getSorteada().getValorString() + ".\nA próxima carta será mais alta ou baixa?");
+            altoOuBaixo = teclado.nextLine();
+            if (altoOuBaixo.equals("s")) {
+                mostrarValorDeJogadorNaMesa();
+                continue;
+            } else if (altoOuBaixo.equals("abandonar")) {
+                sair();
                 break;
-                case "b":
-                    usuarioAchaQueACartaEhBaixa();
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
-                    continue;
+            } else if (altoOuBaixo.equals("")) {
+                continue;
+            } else if (altoOuBaixo.equals("a") || altoOuBaixo.equals("b")) {
+                obtemETrataApostaDoUsuario();
+                break;
+            } else {
+                System.out.println("Opção inválida.");
+                continue;
             }
-            sortearCarta();
-            sortearProximaCarta();
-            turno++;
         }
-        if (jogador.getMoney() >= 1000000.00) {
-            jogador.ganharJogo();
+    }
+
+    private void obtemETrataApostaDoUsuario() {
+        while (true) {
+            System.out.println("Quanto dinheiro você aposta?\nNo máximo " + jogo.getMoneyJogador() + ".");
+            try {
+                aposta = Double.parseDouble(teclado.nextLine());
+                break;
+            } catch (Exception e) {
+                System.out.println("Só tecle números, por favor.");
+                continue;
+            }
         }
-        else {
-            jogador.perderJogo();
-        }
+        jogo.apostar(altoOuBaixo, aposta);
     }
 
     private void sair() {
@@ -59,75 +67,7 @@ public class Mesa {
         System.exit(0);
     }
 
-    private void usuarioAchaQueACartaEhBaixa() throws RuntimeException, NumberFormatException {
-        while (true) {
-            System.out.println("Quanto dinheiro você aposta?\nNo máximo " + jogador.getMoney() + ".");
-            String respostaUsuario = teclado.nextLine();
-            if (respostaUsuario.equals("s") || respostaUsuario.equals("")) {
-                mostrarValorDeJogadorNaMesa();
-                continue;
-            }
-            try {
-                aposta = Double.parseDouble(respostaUsuario);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Só tecle números, por favor.");
-                continue;
-            }
-        }
-        if (getProximaSorteada().getValorInt() < getSorteada().getValorInt()) {
-            jogador.ganhar(aposta);
-            System.out.println("Você ganhou.\nA outra carta era " + getProximaSorteada().getValorString() + ".\nVocê tem agora " + jogador.getMoney() + ".");
-        } else {
-            jogador.perder(aposta);
-            System.out.println("Você perdeu.\nA outra carta era " + getSorteada().getValorString() + ".\nVocê tem agora " + jogador.getMoney() + ".");
-        }
-    }
-
-    private void usuarioAchaQueACartaEhAlta() {
-        while (true) {
-            System.out.println("Quanto dinheiro você aposta?\nNo máximo " + jogador.getMoney() + ".");
-            String respostaUsuario = teclado.nextLine();
-            if (respostaUsuario.equals("s") || respostaUsuario.equals("")) {
-                mostrarValorDeJogadorNaMesa();
-                continue;
-            }
-            try {
-                aposta = Double.parseDouble(respostaUsuario);
-                break;
-            } catch (Exception e) {
-                System.out.println("Só tecle números, por favor.");
-                continue;
-            }
-        }
-        if (getProximaSorteada().getValorInt() > getSorteada().getValorInt()) {
-            jogador.ganhar(aposta);
-            System.out.println("Você ganhou.\nA outra carta era " + getProximaSorteada().getValorString() + ".\nVocê tem agora " + jogador.getMoney() + ".");
-        } else {
-            jogador.perder(aposta);
-            System.out.println("Você perdeu.\nA outra carta era " + getSorteada().getValorString() + ".\nVocê tem agora " + jogador.getMoney() + ".");
-        }
-    }
-
-    private void sortearProximaCarta() {
-        Random random = new Random();
-        proximaSorteada = new Carta(random.nextInt(14));
-    }
-
-    private void sortearCarta() {
-        Random random = new Random();
-        sorteada = new Carta(random.nextInt(14));
-    }
-
-    private Carta getSorteada() {
-        return sorteada;
-    }
-
     public void mostrarValorDeJogadorNaMesa() {
-        System.out.println("Você tem " + jogador.getMoney() + " na mesa agora.");
-    }
-
-    private Carta getProximaSorteada() {
-        return proximaSorteada;
+        System.out.println("Você tem " + jogo.getMoneyJogador() + " reais na mesa agora.");
     }
 }
