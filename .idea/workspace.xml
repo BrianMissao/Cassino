@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f427df2-f9a4-4bca-9bfa-5230ccb42885" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cassino/Cassino.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cassino/Cassino.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cassino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cassino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Mesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Mesa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/production/Cassino/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/production/Cassino/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/production/Cassino/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/production/Cassino/.idea/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/production/Cassino/.idea/vcs.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
