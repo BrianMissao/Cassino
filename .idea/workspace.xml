@@ -3,8 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="7f427df2-f9a4-4bca-9bfa-5230ccb42885" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Jogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Jogador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Jogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Jogo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/.idea/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/Cassino.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/classes/Carta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/classes/Jogador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/classes/Jogo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cassino/classes/Mesa.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +102,8 @@
       <workItem from="1583182269482" duration="1410000" />
       <workItem from="1583236713475" duration="34000" />
       <workItem from="1583418973330" duration="5244000" />
+      <workItem from="1583430238210" duration="514000" />
+      <workItem from="1583430770464" duration="239000" />
     </task>
     <servers />
   </component>
