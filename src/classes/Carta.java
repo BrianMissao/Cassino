@@ -1,34 +1,48 @@
 package classes;
 
-public class Carta {
-    private String valorString;
-    private int valorInt;
+public enum Carta {
+    AS(1, "As"),
+    DOIS(2),
+    TRES(3),
 
-    public Carta(int valor) {
-        this.valorInt = valor == 0 ? 1 : valor;
-        definirStringValor();
+    QUATRO(4),
+
+    CINCO(5),
+
+    SEIS(6),
+
+    SETE(7),
+
+    OITO(8),
+
+    NOVE(9),
+
+    DEZ(10),
+
+    VALETE(11, "Valete"),
+
+    DAMA(12, "Dama"),
+
+    REI(13, "Rei");
+
+    private int valor;
+    private String nome;
+
+    Carta(int valor) {
+        this.valor = valor;
+        this.nome = String.valueOf(valor);
     }
 
-    private void definirStringValor() {
-        if (getValorInt() == 1 ) {
-            this.valorString = "As";
-        }
-        else if (getValorInt() == 11) {
-            this.valorString = "Valete";
-        } else if (getValorInt() == 12) {
-            this.valorString = "Dama";
-        } else if (getValorInt() == 13) {
-            this.valorString = "rei";
-        } else {
-            this.valorString = String.valueOf(getValorInt());
-        }
+    Carta(int valor, String nome) {
+        this.valor = valor;
+        this.nome = nome;
     }
 
-    public String getValorString() {
-        return valorString;
+    public String getNome() {
+        return nome;
     }
 
-    public int getValorInt() {
-        return valorInt;
+    public int getValor() {
+        return valor;
     }
 }

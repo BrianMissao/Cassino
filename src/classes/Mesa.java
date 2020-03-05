@@ -1,6 +1,5 @@
 package classes;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Mesa {
@@ -15,6 +14,7 @@ public class Mesa {
     }
 
     public void iniciarPartida() {
+
         jogo.sortearCarta();
         jogo.sortearProximaCarta();
         while (jogo.getMoneyJogador() > 0 && jogo.getMoneyJogador() < 1000000.00) {
@@ -28,7 +28,7 @@ public class Mesa {
 
     private void trataRespostasDigitadasPeloUsuario() {
         while (true) {
-            System.out.println("Rodada " + jogo.getTurno() + "\nVocê tirou " + jogo.getSorteada().getValorString() + ".\nA próxima carta será mais alta ou baixa?");
+            System.out.println("Rodada " + jogo.getTurno() + "\nVocê tirou " + jogo.getPrimeiraCarta().getNome() + ".\nA próxima carta será mais alta ou baixa?");
             altoOuBaixo = teclado.nextLine();
             if (altoOuBaixo.equals("s")) {
                 mostrarValorDeJogadorNaMesa();
