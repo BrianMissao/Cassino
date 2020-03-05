@@ -32,6 +32,7 @@ public class Jogo {
     void definirResultadoJogo() {
         if (jogador.getMoney() >= 1000000.00) {
             jogador.ganharJogo();
+            System.out.println("O recorde anterior era de Brian que começou com 30000 e conseguiu chegar a 10000000 em 180 jogadas.\nVocê conseguiu chegar a " + jogador.getMoney() + " em " + getTurno() + " jogadas.");
         } else {
             jogador.perderJogo();
         }
@@ -73,7 +74,7 @@ public class Jogo {
 
     private void executarApostaPerdida(double aposta) {
         jogador.perder(aposta);
-        System.out.println("Você perdeu.\nA outra carta era " + getPrimeiraCarta().getNome() + ".\nVocê tem agora " + jogador.getMoney() + " reais.");
+        System.out.println("Você perdeu.\nA outra carta era " + getSegundaCarta().getNome() + ".\nVocê tem agora " + jogador.getMoney() + " reais.");
     }
 
     private void executarApostaGanha(double aposta) {
@@ -89,10 +90,5 @@ public class Jogo {
         Random random = new Random();
         int posicaoDaCarta = random.nextInt(13);
         return Carta.values()[posicaoDaCarta];
-    }
-
-    private int sortearValorDaCarta() {
-        Random random = new Random();
-        return random.ints(1, 14).findFirst().getAsInt();
     }
 }

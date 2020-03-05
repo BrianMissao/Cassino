@@ -24,12 +24,11 @@ public class Jogador {
     public double getMoney() {
         return money;
     }
-
-    public void ganharJogo() {
-        System.out.println("Parabéns, você ganhou o jogo!");
-    }
-
     public void perderJogo() {
         System.out.println("Você perdeu o jogo.");
+    }
+
+    public void ganharJogo() {
+        System.out.println("Você ganhou o jogo!");
     }
 }

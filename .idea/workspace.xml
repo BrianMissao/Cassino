@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7f427df2-f9a4-4bca-9bfa-5230ccb42885" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Carta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Carta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Jogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Jogador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/Jogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Jogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Mesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Mesa.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +92,7 @@
       <workItem from="1582320806777" duration="508000" />
       <workItem from="1583182269482" duration="1410000" />
       <workItem from="1583236713475" duration="34000" />
-      <workItem from="1583418973330" duration="2015000" />
+      <workItem from="1583418973330" duration="4661000" />
     </task>
     <servers />
   </component>
@@ -137,10 +136,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581629264078" />
-    <state x="681" y="261" width="570" height="524" key="StructurePopup" timestamp="1583421118522">
+    <state x="681" y="261" width="570" height="524" key="StructurePopup" timestamp="1583429662972">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="681" y="261" width="570" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1583421118522" />
+    <state x="681" y="261" width="570" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1583429662972" />
     <state x="690" y="275" width="540" height="499" key="extract.method.dialog" timestamp="1581710678111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
