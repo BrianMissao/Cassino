@@ -73,12 +73,12 @@ public class Jogo {
 
     private void executarApostaPerdida(double aposta) {
         jogador.perder(aposta);
-        System.out.println("Você perdeu.\nA outra carta era " + getPrimeiraCarta().name() + ".\nVocê tem agora " + jogador.getMoney() + " reais.");
+        System.out.println("Você perdeu.\nA outra carta era " + getPrimeiraCarta().getNome() + ".\nVocê tem agora " + jogador.getMoney() + " reais.");
     }
 
     private void executarApostaGanha(double aposta) {
         jogador.ganhar(aposta);
-        System.out.println("Você ganhou.\nA outra carta era " + getSegundaCarta().name() + ".\nVocê tem agora " + jogador.getMoney() + " reais.");
+        System.out.println("Você ganhou.\nA outra carta era " + getSegundaCarta().getNome() + ".\nVocê tem agora " + jogador.getMoney() + " reais.");
     }
 
     public void atualizaTurno() {
@@ -87,7 +87,7 @@ public class Jogo {
 
     private Carta sortearUmaCarta() {
         Random random = new Random();
-        int posicaoDaCarta = random.nextInt(14);
+        int posicaoDaCarta = random.nextInt(13);
         return Carta.values()[posicaoDaCarta];
     }
 
