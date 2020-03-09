@@ -22,6 +22,9 @@ public class Jogo {
     }
 
     void apostar(String altoOuBaixa, double aposta) {
+        if (aposta > jogador.getMoney() || aposta == 0) {
+            throw new ExcecaoDeApostaInvalida(jogador.getMoney());
+        }
         if (altoOuBaixa.equals("a")) {
             apostarEmCartaAlta(aposta, altoOuBaixa.equals("a"));
         } else {
@@ -32,7 +35,7 @@ public class Jogo {
     void definirResultadoJogo() {
         if (jogador.getMoney() >= 1000000.00) {
             jogador.ganharJogo();
-            System.out.println("O recorde anterior era de Brian que começou com 30000 e conseguiu chegar a 10000000 em 180 jogadas.\nVocê conseguiu chegar a " + jogador.getMoney() + " em " + getTurno() + " jogadas.");
+            System.out.println("O recorde anterior era de Brian que começou com 30000 e conseguiu chegar a 10000000 em 180 jogadas.\nVocê conseguiu chegar a " + jogador.getMoney() + " em " + (getTurno()-1) + " jogadas.");
         } else {
             jogador.perderJogo();
         }
@@ -54,7 +57,7 @@ public class Jogo {
         return segundaCarta;
     }
 
-    private void apostarEmCartaBaixa(double aposta) throws RuntimeException, NumberFormatException {
+    private void apostarEmCartaBaixa(double aposta) {
         if (getSegundaCarta().getValor() < getPrimeiraCarta().getValor()) {
             executarApostaGanha(aposta);
         } else {
@@ -82,7 +85,7 @@ public class Jogo {
         System.out.println("Você ganhou.\nA outra carta era " + getSegundaCarta().getNome() + ".\nVocê tem agora " + jogador.getMoney() + " reais.");
     }
 
-    public void atualizaTurno() {
+    public void atualizarTurno() {
         turno++;
     }
 

@@ -18,15 +18,15 @@ public class Mesa {
         jogo.sortearCarta();
         jogo.sortearProximaCarta();
         while (jogo.getMoneyJogador() > 0 && jogo.getMoneyJogador() < 1000000.00) {
-            trataRespostasDigitadasPeloUsuario();
+            tratarRespostasDigitadasPeloUsuario();
             jogo.sortearCarta();
             jogo.sortearProximaCarta();
-            jogo.atualizaTurno();
+            jogo.atualizarTurno();
         }
         jogo.definirResultadoJogo();
     }
 
-    private void trataRespostasDigitadasPeloUsuario() {
+    private void tratarRespostasDigitadasPeloUsuario() {
         while (true) {
             System.out.println("Rodada " + jogo.getTurno() + "\nVocê tirou " + jogo.getPrimeiraCarta().getNome() + ".\nA próxima carta será mais alta ou baixa?");
             altoOuBaixo = teclado.nextLine();
@@ -39,7 +39,7 @@ public class Mesa {
             } else if (altoOuBaixo.equals("")) {
                 continue;
             } else if (altoOuBaixo.equals("a") || altoOuBaixo.equals("b")) {
-                obtemETrataApostaDoUsuario();
+                obterETratarRespostaDoUsuario();
                 break;
             } else {
                 System.out.println("Opção inválida.");
@@ -48,18 +48,22 @@ public class Mesa {
         }
     }
 
-    private void obtemETrataApostaDoUsuario() {
+    private void obterETratarRespostaDoUsuario() throws NumberFormatException, ExcecaoDeApostaInvalida {
         while (true) {
             System.out.println("Quanto dinheiro você aposta?\nNo máximo " + jogo.getMoneyJogador() + ".");
             try {
                 aposta = Double.parseDouble(teclado.nextLine());
+                jogo.apostar(altoOuBaixo, aposta);
                 break;
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Só tecle números, por favor.");
                 continue;
             }
+            catch (ExcecaoDeApostaInvalida e) {
+                System.out.println(e.getMessage());
+                continue;
+            }
         }
-        jogo.apostar(altoOuBaixo, aposta);
     }
 
     private void sair() {
